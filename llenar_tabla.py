@@ -174,9 +174,11 @@ def generate_date():
     Generate random date dd/mm/yyyy
     """
     day = random.randint(0,28)
+    day = day if day > 9 else f'0{day}'
     month = random.randint(1,12)
-    year = random.randint(2012, 2019)
-    date = f'{day}/{month}/{year}'
+    month = month if month > 9 else f'0{month}'
+    year = random.randint(2012, 2019) 
+    date = f'{year}-{month}-{day}'
     return date
 
 def insert_cliente(id):
